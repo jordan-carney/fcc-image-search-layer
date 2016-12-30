@@ -4,13 +4,15 @@ const MongoClient = require('mongodb').MongoClient
 
 let connection = {
     db: null,
-    rando: Math.random(),
 }
 
 module.exports = {
 
     connect: function(url, callback) {
-        if (connection.db) return callback()
+        if (connection.db) {
+          callback()
+          return
+        }
 
         MongoClient.connect(url, (err, db) => {
 
@@ -24,7 +26,6 @@ module.exports = {
     },
 
     logSearchSession: function(query) {
-        console.log(connection.rando)
         const log = {
             term: query,
             when: new Date(),
@@ -32,13 +33,14 @@ module.exports = {
 
         connection.db.collection('search-log')
             .save(log), (err, result) => {
-                if (err) return console.log(err)
-                return console.log(result)
+                if (err) {
+                  console.log(err)
+                  return
+                }
             }
     },
 
     fetchSearchSessions: function(callback) {
-        console.log(connection.rando)
         connection.db.collection('search-log')
             .find({}, { _id: 0 })
             .sort({ when: -1 })
