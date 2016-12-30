@@ -1,6 +1,6 @@
 'use-strict'
 
-require('dotenv').config()
+if( process.env.NODE_ENV !== 'production') require('dotenv').config()
 const dbUrl = process.env.MONGO_URL
 const express = require('express')
 const app = express()
