@@ -7,26 +7,35 @@ const gSearch = require('./gSearchAPI')
 
 router.get('/', (req, res) => {
 
-  if ( !req.query.q ) {
-    res.send('SEARCH APP HOME')
-    return
-  }
+    if (!req.query.q) {
+        res.sendFile(__dirname + '/public/index.html')
+        return
+    }
 
-  const query = req.query.q
-  const perPage = ( req.query.num ) ? req.query.num : 1
-  //TODO: Add pagination!
-  gSearch(query, perPage, (data) => { res.send(data) })
+    const query = req.query.q
+    const perPage = (req.query.offset) ? req.query.offset : 1
 
-  db.logSearchSession(query)
-
+    gSearch(query, perPage, (err, data) => {
+        if (err) {
+            console.log(err)
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
 })
 
 
 router.get('/recent', (req, res) => {
 
-  db.fetchSearchSessions( (data) => {
-    res.send(data)
-  })
+    db.fetchSearchSessions((err, data) => {
+        if (err) {
+            console.log(err)
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
 
 })
 

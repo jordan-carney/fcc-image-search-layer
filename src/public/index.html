@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FCC Image Search Layer | Jordan Carney</title>
+    <style>
+        * {
+            font-family: arial, helvetica, sans-serif;
+        }
+
+        code {
+            display: block;
+            padding: 2px 4px;
+            font-size: 90%;
+            color: #c7254e;
+            background-color: #f9f2f4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Free Code Camp Microservice: Image Search Layer</h1>
+    <p>User stories:</p>
+    <ul>
+        <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+        <li>I can paginate through the responses by adding a ?offset=[NUMBER] parameter to the URL.</li>
+        <li>I can get a list of the 10 most recently submitted search strings.</li>
+    </ul>
+    <h2>Search</h2>
+    <code>https://jc-fcc-img-search.herokuapp.com/?q=YourQuery&offset=1</code>
+    <p>Params</p>
+    <p><strong>q</strong> - Takes a search query as a URL encoded string.</p>
+    <p><strong>offset</strong> - Takes a number to paginate the query results.</p>
+    <h2>View Recent Searches</h2>
+    <code>https://jc-fcc-img-search.herokuapp.com/recent</code>
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2016 &middot; <a href="http://jordancarney.com" target="_blank">Jordan Carney</a></p>
+    </footer>
+</body>
+
+</html>

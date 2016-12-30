@@ -12,9 +12,9 @@ app.use('/', routes)
 app.set('port', (process.env.PORT || 5000))
 
 db.connect(dbUrl, (err) => {
-  if (err) return console.log(err)
+    if (err) return console.log(err)
 
-  app.listen(app.get('port'), () => {
-    console.log('App is running! PORT:', app.get('port'))
-  })
+    app.listen(app.get('port'), () => {
+        console.log('App is running! PORT:', app.get('port'))
+    })
 })
