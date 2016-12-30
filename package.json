@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Free Code Camp - Image abstraction layer",
   "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+  },
   "author": "Jordan Carney",
   "license": "MIT",
   "dependencies": {
