@@ -1,4 +1,5 @@
 <h1>Free Code Camp Microservice: Image Search Layer</h1>
+<p>Want to run locally? Message me for env vars.</p>
 <p>User stories:</p>
 <ul>
     <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
