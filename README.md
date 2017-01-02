@@ -1,4 +1,5 @@
 <h1>Free Code Camp Microservice: Image Search Layer</h1>
+<p><strong>Demo</strong> https://jc-fcc-img-search.herokuapp.com/ </p>
 <p>Want to run locally? Message me for env vars.</p>
 <p>User stories:</p>
 <ul>
